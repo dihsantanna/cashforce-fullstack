@@ -1,0 +1,4 @@
+node_modules
+build
+*.spec.ts
+*/database/models/index.ts
