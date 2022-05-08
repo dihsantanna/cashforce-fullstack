@@ -1,6 +1,6 @@
 import { Table, Column, Model } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { CnpjAttributes, CnpjCreationAttributes } from 'src/types/CnpjCreationAttribute';
+import { CnpjAttributes, CnpjCreationAttributes } from 'src/types/CnpjCreationAttribute.interface';
 
 @Table({
   timestamps: true,

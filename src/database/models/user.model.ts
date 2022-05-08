@@ -1,6 +1,6 @@
 import { Table, Column, Model } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { UserAttributes, UserCreationAttributes } from 'src/types/UserCreationAttributes';
+import { UserAttributes, UserCreationAttributes } from 'src/types/UserCreationAttributes.interface';
 
 @Table({
   timestamps: true,
@@ -20,8 +20,8 @@ export default class User extends Model<UserAttributes, UserCreationAttributes> 
   departament: string;
   @Column(DataTypes.STRING)
   verificationCode: string;
-  @Column(DataTypes.TINYINT({length: 1}))
+  @Column(DataTypes.TINYINT)
   emailChecked: number;
-  @Column(DataTypes.TINYINT({length: 1}))
+  @Column(DataTypes.TINYINT)
   cashforceAdm: number;
 }
