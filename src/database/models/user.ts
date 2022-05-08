@@ -1,4 +1,4 @@
-import { Table, Column, Model, HasMany, CreatedAt, UpdatedAt } from 'sequelize-typescript';
+import { Table, Column, Model } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
 import { UserAttributes, UserCreationAttributes } from 'src/types/UserCreationAttributes';
 
