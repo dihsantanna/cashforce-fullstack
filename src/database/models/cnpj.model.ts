@@ -1,6 +1,7 @@
-import { Table, Column, Model } from 'sequelize-typescript';
+import { Table, Column, Model, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
 import { CnpjAttributes, CnpjCreationAttributes } from 'src/types/CnpjCreationAttribute.interface';
+import Provider from './provider.model';
 
 @Table({
   timestamps: true,
@@ -12,4 +13,6 @@ export default class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> 
   cnpj: string;
   @Column(DataTypes.STRING)
   companyType: string;
+  @HasMany(() => Provider)
+  providers: Provider[];
 }
