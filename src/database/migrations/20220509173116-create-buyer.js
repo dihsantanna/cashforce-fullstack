@@ -84,6 +84,14 @@ module.exports = {
         defaultValue: null,
         type: Sequelize.STRING
       },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
       cnpjId: {
         defaultValue: null,
         type: Sequelize.INTEGER(11),
@@ -101,14 +109,6 @@ module.exports = {
       email: {
         defaultValue: null,
         type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },

@@ -36,10 +36,6 @@ module.exports = {
         defaultValue: 0,
         type: Sequelize.TINYINT(1)
       },
-      cashforceAdm: {
-        defaultValue: 0,
-        type: Sequelize.TINYINT(1)
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -47,6 +43,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      cashforceAdm: {
+        defaultValue: 0,
+        type: Sequelize.TINYINT(1)
       }
     });
   },
