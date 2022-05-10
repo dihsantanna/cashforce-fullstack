@@ -1,0 +1,29 @@
+import { Table, Column, Model, HasMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { DataTypes } from 'sequelize/types';
+import { OrderportionAttributes, OrderportionCreationAttributes } from 'src/types/OrderportionCreationAttribute.interface';
+import Order from './order.model';
+
+@Table({
+  timestamps: true,
+  modelName: 'Orderportion',
+  tableName: 'orderportions',
+})
+export default class Orderportion extends Model<OrderportionAttributes, OrderportionCreationAttributes> {
+  @Column(DataTypes.STRING)
+  nDup: string;
+
+  @Column(DataTypes.STRING)
+  dVenc: string;
+
+  @Column(DataTypes.STRING)
+  vDup: string;
+
+  @Column(DataTypes.TINYINT)
+  availableToMarket: number;
+
+  @ForeignKey(() => Order)
+  @Column(DataTypes.INTEGER)
+  orderId: number;
+  @BelongsTo(() => Order)
+  order: Order;
+}
