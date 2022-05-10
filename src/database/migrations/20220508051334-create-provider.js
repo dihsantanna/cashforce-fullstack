@@ -108,7 +108,7 @@ module.exports = {
         },
         type: Sequelize.INTEGER(11),
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+        onDelete: 'SET NULL',
       },
       email: {
         defaultValue: null,
@@ -124,7 +124,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, _Sequelize) {
     await queryInterface.dropTable('providers');
   }
 };
