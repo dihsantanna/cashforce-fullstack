@@ -112,7 +112,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'cnpjId'
       },
       email: {
         defaultValue: null,

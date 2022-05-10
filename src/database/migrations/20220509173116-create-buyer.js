@@ -101,6 +101,7 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
+        key: 'cnpjId'
       },
       confirm: {
         defaultValue: 1,

@@ -56,7 +56,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'orderId'
       },
       sponsorId: {
         defaultValue: null,
@@ -66,7 +67,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'sponsorId'
       }
     }, {
       charset: 'latin1'

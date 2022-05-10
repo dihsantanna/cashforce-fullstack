@@ -10,7 +10,8 @@ module.exports = {
       },
       cnpj: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       companyType: {
         allowNull: false,

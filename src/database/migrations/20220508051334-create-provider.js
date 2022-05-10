@@ -117,6 +117,7 @@ module.exports = {
         type: Sequelize.INTEGER(11),
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
+        key: 'cnpjId'
       },
       email: {
         defaultValue: null,

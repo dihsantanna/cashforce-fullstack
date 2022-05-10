@@ -10,7 +10,8 @@ module.exports = {
       },
       orderNfId: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       orderNumber: {
         allowNull: false,
@@ -18,15 +19,18 @@ module.exports = {
       },
       orderPath: {
         defaultValue: null,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       orderFileName: {
         defaultValue: null,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       orderOriginalName: {
         defaultValue: null,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       emissionDate: {
         defaultValue: null,
@@ -68,7 +72,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'cnpjId'
       },
       userId: {
         defaultValue: null,
@@ -78,7 +83,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'userId'
       },
       buyerId: {
         defaultValue: null,
@@ -88,7 +94,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
+        onDelete: 'SET NULL',
+        key: 'buyerId'
       },
       providerId: {
         defaultValue: null,
@@ -98,7 +105,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        unDelete: 'SET NULL'
+        unDelete: 'SET NULL',
+        key: 'providerId'
       },
       oderStatusBuyer: {
         defaultValue: '0',
