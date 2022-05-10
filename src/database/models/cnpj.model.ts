@@ -4,6 +4,7 @@ import { CnpjAttributes, CnpjCreationAttributes } from 'src/types/CnpjCreationAt
 import Buyer from './buyer.model';
 import Order from './order.model';
 import Provider from './provider.model';
+import Sponsor from './sponsor.model';
 
 @Table({
   timestamps: true,
@@ -25,4 +26,7 @@ export default class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> 
 
   @HasMany(() => Order)
   orders: Order[];
+
+  @HasMany(() => Sponsor)
+  sponsors: Sponsor[];
 }
