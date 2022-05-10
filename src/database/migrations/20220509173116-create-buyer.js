@@ -85,7 +85,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       cnpjId: {
-        allowNull: false,
+        defaultValue: null,
         type: Sequelize.INTEGER(11),
         references: {
           model: 'cnpjs',
