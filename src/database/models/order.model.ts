@@ -3,6 +3,7 @@ import { DataTypes } from 'sequelize/types';
 import { OrderAttributes, OrderCreationAttributes } from 'src/types/OrderCreationAttribute.interface';
 import Buyer from './buyer.model';
 import Cnpj from './cnpj.model';
+import Offer from './offer.model';
 import Orderportion from './orderportion.model';
 import Provider from './provider.model';
 import User from './user.model';
@@ -86,5 +87,8 @@ export default class Order extends Model<OrderAttributes, OrderCreationAttribute
   deliveryCtrc: string;
 
   @HasMany(() => Orderportion)
-  orderportions: Orderportion[]
+  orderportions: Orderportion[];
+
+  @HasMany(() => Offer)
+  offers: Offer[];
 }

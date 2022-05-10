@@ -1,7 +1,8 @@
-import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
 import { SponsorAttributes, SponsorCreationAttributes } from 'src/types/SponsorCreationAttribute.interface';
 import Cnpj from './cnpj.model';
+import Offer from './offer.model';
 
 @Table({
   timestamps: true,
@@ -83,4 +84,7 @@ export default class Sponsor extends Model<SponsorAttributes, SponsorCreationAtt
   
   @Column(DataTypes.STRING)
   email: string;
+
+  @HasMany(() => Offer)
+  offers: Offer[];
 }
