@@ -1,6 +1,9 @@
 import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { OfferAttributes, OfferCreationAttributes } from 'src/interfaces/OfferCreationAttribute.interface';
+import {
+  OfferAttributes,
+  OfferCreationAttributes,
+} from 'src/interfaces/OfferCreationAttribute.interface';
 import Order from './order.model';
 import Sponsor from './sponsor.model';
 
@@ -8,43 +11,44 @@ import Sponsor from './sponsor.model';
   timestamps: true,
   modelName: 'Offer',
   tableName: 'offers',
-  charset: 'latin1'
+  charset: 'latin1',
 })
 export default class Offer extends Model<OfferAttributes, OfferCreationAttributes> {
   @Column(DataTypes.STRING)
-  tax: string;
+    tax: string;
 
   @Column(DataTypes.STRING)
-  tariff: string;
+    tariff: string;
 
   @Column(DataTypes.STRING)
-  adValorem: string;
+    adValorem: string;
 
   @Column(DataTypes.STRING)
-  float: string;
+    float: string;
 
   @Column(DataTypes.STRING)
-  iof: string;
+    iof: string;
 
   @Column(DataTypes.DATE)
-  expiresIn: Date;
+    expiresIn: Date;
 
   @Column(DataTypes.TINYINT)
-  paymentStatusSponsor: number;
+    paymentStatusSponsor: number;
 
   @Column(DataTypes.TINYINT)
-  paymentStatusProvider: number;
-
+    paymentStatusProvider: number;
 
   @ForeignKey(() => Order)
   @Column(DataTypes.INTEGER)
-  orderId: number;
+    orderId: number;
+
   @BelongsTo(() => Order)
-  order: Order;
+    order: Order;
 
   @ForeignKey(() => Sponsor)
   @Column(DataTypes.INTEGER)
-  sponsorId: number;
+    sponsorId: number;
+
   @BelongsTo(() => Sponsor)
-  sponsor: Sponsor;
+    sponsor: Sponsor;
 }

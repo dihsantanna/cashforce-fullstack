@@ -1,4 +1,4 @@
-import  {  Optional  }  from  'sequelize'
+import { Optional } from 'sequelize';
 
 export interface UserAttributes {
   id: number,
@@ -14,4 +14,4 @@ export interface UserAttributes {
   cashforceAdm: number
 }
 
-export interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
+export type UserCreationAttributes = Optional<UserAttributes, 'id'>;

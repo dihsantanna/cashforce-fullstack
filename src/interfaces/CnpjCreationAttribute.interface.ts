@@ -1,4 +1,4 @@
-import  {  Optional  }  from  'sequelize'
+import { Optional } from 'sequelize';
 
 export interface CnpjAttributes {
   id: number,
@@ -8,4 +8,4 @@ export interface CnpjAttributes {
   updatedAt: Date,
 }
 
-export interface CnpjCreationAttributes extends Optional<CnpjAttributes, 'id'> {}
+export type CnpjCreationAttributes = Optional<CnpjAttributes, 'id'>;

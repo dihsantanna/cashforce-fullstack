@@ -1,4 +1,4 @@
-import  {  Optional  }  from  'sequelize';
+import { Optional } from 'sequelize';
 
 export interface OfferAttributes {
   id: number,
@@ -16,4 +16,4 @@ export interface OfferAttributes {
   updatedAt: Date,
 }
 
-export interface OfferCreationAttributes extends Optional<OfferAttributes, 'id'> {}
+export type OfferCreationAttributes = Optional<OfferAttributes, 'id'>;

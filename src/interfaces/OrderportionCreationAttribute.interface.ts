@@ -1,4 +1,4 @@
-import  {  Optional  }  from  'sequelize'
+import { Optional } from 'sequelize';
 
 export interface OrderportionAttributes {
   id: number,
@@ -11,4 +11,4 @@ export interface OrderportionAttributes {
   updatedAt: Date,
 }
 
-export interface OrderportionCreationAttributes extends Optional<OrderportionAttributes, 'id'> {}
+export type OrderportionCreationAttributes = Optional<OrderportionAttributes, 'id'>;

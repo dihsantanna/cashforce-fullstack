@@ -1,4 +1,8 @@
-import 'dotenv/config';
+import dotenv = require('dotenv');
+
+dotenv.config();
+
+const pathModel = '@/database/models';
 
 module.exports = {
   development: {
@@ -8,7 +12,7 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    models: ['@/database/models']
+    models: [pathModel],
   },
   test: {
     username: process.env.DB_USER,
@@ -17,16 +21,15 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    models: ['@/database/models']
+    models: [pathModel],
   },
   production: {
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: `${process.env.DB_NAME}`,
+    database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    models: ['@/database/models']
-  }
-};;
-
+    models: [pathModel],
+  },
+};

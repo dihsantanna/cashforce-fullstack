@@ -13,10 +13,9 @@ export abstract class Controller {
       res.status(code).json(response);
       return;
     } catch (err) {
-      res.status(500).json({message: (err as unknown as Error).message});
-      return;
+      res.status(500).json({ message: (err as unknown as Error).message });
     }
-  };
+  }
 
   async getAll(_req: Request, res: Response): Promise<void> {
     try {
@@ -24,8 +23,7 @@ export abstract class Controller {
       res.status(code).json(response);
       return;
     } catch (err) {
-      res.status(500).json({message: (err as unknown as Error).message});
-      return;
+      res.status(500).json({ message: (err as unknown as Error).message });
     }
   }
 }

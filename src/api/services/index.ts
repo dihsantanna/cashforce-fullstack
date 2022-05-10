@@ -1,7 +1,7 @@
 import { Model } from 'sequelize-typescript';
 import {
   GenericAttributes,
-  GenericCreationAttributes
+  GenericCreationAttributes,
 } from '../../interfaces/GenericCreationAttribute.interface';
 import { ServiceReturn } from '../../interfaces/ServiceReturn.interface';
 

@@ -1,6 +1,9 @@
 import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { OrderAttributes, OrderCreationAttributes } from 'src/interfaces/OrderCreationAttribute.interface';
+import {
+  OrderAttributes,
+  OrderCreationAttributes,
+} from 'src/interfaces/OrderCreationAttribute.interface';
 import Buyer from './buyer.model';
 import Cnpj from './cnpj.model';
 import Offer from './offer.model';
@@ -12,84 +15,88 @@ import User from './user.model';
   timestamps: true,
   modelName: 'Order',
   tableName: 'orders',
-  charset: 'latin1'
+  charset: 'latin1',
 })
 export default class Order extends Model<OrderAttributes, OrderCreationAttributes> {
   @Column(DataTypes.STRING)
-  orderNfId: string;
+    orderNfId: string;
 
   @Column(DataTypes.STRING)
-  orderNumber: string;
+    orderNumber: string;
 
   @Column(DataTypes.STRING)
-  orderPath: string;
+    orderPath: string;
 
   @Column(DataTypes.STRING)
-  orderFileName: string;
+    orderFileName: string;
 
   @Column(DataTypes.STRING)
-  orderOriginalName: string;
+    orderOriginalName: string;
 
   @Column(DataTypes.STRING)
-  emissionDate: string;
+    emissionDate: string;
 
   @Column(DataTypes.STRING)
-  pdfFile: string;
+    pdfFile: string;
 
   @Column(DataTypes.STRING)
-  emitedTo: string;
+    emitedTo: string;
 
   @Column(DataTypes.STRING)
-  nNf: string;
+    nNf: string;
 
   @Column(DataTypes.STRING)
-  CTE: string;
+    CTE: string;
 
   @Column(DataTypes.STRING)
-  value: string;
-  
+    value: string;
+
   @ForeignKey(() => Cnpj)
   @Column(DataTypes.INTEGER)
-  cnpjId: number;
+    cnpjId: number;
+
   @BelongsTo(() => Cnpj)
-  cnpj: Cnpj;
+    cnpj: Cnpj;
 
   @ForeignKey(() => User)
   @Column(DataTypes.INTEGER)
-  userId: number;
+    userId: number;
+
   @BelongsTo(() => User)
-  user: User;
+    user: User;
 
   @ForeignKey(() => Buyer)
   @Column(DataTypes.INTEGER)
-  buyerId: number;
+    buyerId: number;
+
   @BelongsTo(() => Buyer)
-  buyer: Buyer;
+    buyer: Buyer;
 
   @ForeignKey(() => Provider)
   @Column(DataTypes.INTEGER)
-  providerId: number;
+    providerId: number;
+
   @BelongsTo(() => Provider)
-  provider: Provider;
+    provider: Provider;
 
   @Column(DataTypes.STRING)
-  oderStatusBuyer: string;
+    oderStatusBuyer: string;
 
   @Column(DataTypes.STRING)
-  orderStatusProvider: string;
+    orderStatusProvider: string;
 
   @Column(DataTypes.STRING)
-  deliveryReceipt: string;
+    deliveryReceipt: string;
 
   @Column(DataTypes.STRING)
-  cargoPackingList: string;
+    cargoPackingList: string;
 
   @Column(DataTypes.STRING)
-  deliveryCtrc: string;
+    deliveryCtrc: string;
 
   @HasMany(() => Orderportion)
-  orderportions: Orderportion[];
+    orderportions: Orderportion[];
 
   @HasMany(() => Offer)
-  offers: Offer[];
+    offers: Offer[];
 }

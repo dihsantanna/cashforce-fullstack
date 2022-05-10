@@ -1,39 +1,42 @@
 import { Table, Column, Model, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { UserAttributes, UserCreationAttributes } from 'src/interfaces/UserCreationAttributes.interface';
+import {
+  UserAttributes,
+  UserCreationAttributes,
+} from 'src/interfaces/UserCreationAttributes.interface';
 import Order from './order.model';
 
 @Table({
   timestamps: true,
   modelName: 'User',
   tableName: 'users',
-  charset: 'latin1'
+  charset: 'latin1',
 })
 export default class User extends Model<UserAttributes, UserCreationAttributes> {
   @Column(DataTypes.STRING)
-  name: string;
+    name: string;
 
   @Column(DataTypes.STRING)
-  email: string;
+    email: string;
 
   @Column(DataTypes.STRING)
-  phoneNumber: string;
+    phoneNumber: string;
 
   @Column(DataTypes.STRING)
-  mobile: string;
+    mobile: string;
 
   @Column(DataTypes.STRING)
-  departament: string;
+    departament: string;
 
   @Column(DataTypes.STRING)
-  verificationCode: string;
+    verificationCode: string;
 
   @Column(DataTypes.TINYINT)
-  emailChecked: number;
+    emailChecked: number;
 
   @Column(DataTypes.TINYINT)
-  cashforceAdm: number;
+    cashforceAdm: number;
 
   @HasMany(() => Order)
-  orders: Order[];
+    orders: Order[];
 }

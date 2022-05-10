@@ -1,6 +1,9 @@
 import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { SponsorAttributes, SponsorCreationAttributes } from 'src/interfaces/SponsorCreationAttribute.interface';
+import {
+  SponsorAttributes,
+  SponsorCreationAttributes,
+} from 'src/interfaces/SponsorCreationAttribute.interface';
 import Cnpj from './cnpj.model';
 import Offer from './offer.model';
 
@@ -8,84 +11,85 @@ import Offer from './offer.model';
   timestamps: true,
   modelName: 'Sponsor',
   tableName: 'sponsors',
-  charset: 'latin1'
+  charset: 'latin1',
 })
 export default class Sponsor extends Model<SponsorAttributes, SponsorCreationAttributes> {
   @Column(DataTypes.STRING)
-  name: string;
+    name: string;
 
   @Column(DataTypes.STRING)
-  tradingName: string;
+    tradingName: string;
 
   @Column(DataTypes.STRING)
-  cashforceTax: string;
+    cashforceTax: string;
 
   @Column(DataTypes.STRING)
-  responsibleName:string;
+    responsibleName:string;
 
   @Column(DataTypes.STRING)
-  responsibleEmail: string;
+    responsibleEmail: string;
 
   @Column(DataTypes.STRING)
-  responsiblePosition: string;
+    responsiblePosition: string;
 
   @Column(DataTypes.STRING)
-  responsiblePhone: string;
+    responsiblePhone: string;
 
   @Column(DataTypes.STRING)
-  responsibleMobile: string;
+    responsibleMobile: string;
 
   @Column(DataTypes.STRING)
-  website: string;
+    website: string;
 
   @Column(DataTypes.STRING)
-  postalCode: string;
+    postalCode: string;
 
   @Column(DataTypes.STRING)
-  address: string;
+    address: string;
 
   @Column(DataTypes.STRING)
-  number: string;
+    number: string;
 
   @Column(DataTypes.STRING)
-  complement: string;
+    complement: string;
 
   @Column(DataTypes.STRING)
-  neighborhood: string;
+    neighborhood: string;
 
   @Column(DataTypes.STRING)
-  city: string;
+    city: string;
 
   @Column(DataTypes.STRING)
-  bank: string;
+    bank: string;
 
   @Column(DataTypes.STRING)
-  bankAgency: string;
+    bankAgency: string;
 
   @Column(DataTypes.STRING)
-  account: string;
+    account: string;
 
   @Column(DataTypes.STRING)
-  state: string;
+    state: string;
 
   @Column(DataTypes.STRING)
-  phoneNumber: string;
+    phoneNumber: string;
 
   @Column(DataTypes.STRING)
-  situation: string;
+    situation: string;
 
   @Column(DataTypes.STRING)
-  situationDate: string;
+    situationDate: string;
 
   @ForeignKey(() => Cnpj)
   @Column(DataTypes.INTEGER)
-  cnpjId: number;
+    cnpjId: number;
+
   @BelongsTo(() => Cnpj)
-  cnpj: Cnpj;
-  
+    cnpj: Cnpj;
+
   @Column(DataTypes.STRING)
-  email: string;
+    email: string;
 
   @HasMany(() => Offer)
-  offers: Offer[];
+    offers: Offer[];
 }
