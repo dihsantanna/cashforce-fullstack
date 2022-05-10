@@ -1,6 +1,6 @@
 import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { OrderportionAttributes, OrderportionCreationAttributes } from 'src/types/OrderportionCreationAttribute.interface';
+import { OrderportionAttributes, OrderportionCreationAttributes } from 'src/interfaces/OrderportionCreationAttribute.interface';
 import Order from './order.model';
 
 @Table({

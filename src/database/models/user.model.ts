@@ -1,6 +1,6 @@
 import { Table, Column, Model, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { UserAttributes, UserCreationAttributes } from 'src/types/UserCreationAttributes.interface';
+import { UserAttributes, UserCreationAttributes } from 'src/interfaces/UserCreationAttributes.interface';
 import Order from './order.model';
 
 @Table({

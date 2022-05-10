@@ -1,6 +1,6 @@
 import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { BuyerAttributes, BuyerCreationAttributes } from 'src/types/BuyerCreationAttribute.interface';
+import { BuyerAttributes, BuyerCreationAttributes } from 'src/interfaces/BuyerCreationAttribute.interface';
 import Cnpj from './cnpj.model';
 
 @Table({

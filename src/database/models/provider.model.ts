@@ -1,6 +1,6 @@
 import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { ProviderAttributes, ProviderCreationAttributes } from 'src/types/ProviderCreationAttribute.interface';
+import { ProviderAttributes, ProviderCreationAttributes } from 'src/interfaces/ProviderCreationAttribute.interface';
 import Cnpj from './cnpj.model';
 import Order from './order.model';
 

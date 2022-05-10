@@ -1,6 +1,6 @@
 import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
-import { OfferAttributes, OfferCreationAttributes } from 'src/types/OfferCreationAttribute.interface';
+import { OfferAttributes, OfferCreationAttributes } from 'src/interfaces/OfferCreationAttribute.interface';
 import Order from './order.model';
 import Sponsor from './sponsor.model';
 
