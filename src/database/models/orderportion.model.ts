@@ -1,4 +1,4 @@
-import { Table, Column, Model, HasMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { DataTypes } from 'sequelize/types';
 import { OrderportionAttributes, OrderportionCreationAttributes } from 'src/types/OrderportionCreationAttribute.interface';
 import Order from './order.model';
