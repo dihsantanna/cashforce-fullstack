@@ -6,7 +6,8 @@ import Cnpj from './cnpj.model';
 @Table({
   timestamps: true,
   modelName: 'Buyer',
-  tableName: 'buyers'
+  tableName: 'buyers',
+  charset: 'latin1'
 })
 export default class Buyer extends Model<BuyerAttributes, BuyerCreationAttributes> {
   @Column(DataTypes.STRING)

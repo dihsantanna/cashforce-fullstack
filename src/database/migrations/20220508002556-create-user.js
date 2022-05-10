@@ -48,6 +48,8 @@ module.exports = {
         defaultValue: 0,
         type: Sequelize.TINYINT(1)
       }
+    }, {
+      charset: 'latin1'
     });
   },
   async down(queryInterface, _Sequelize) {

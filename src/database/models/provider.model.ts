@@ -7,7 +7,8 @@ import Order from './order.model';
 @Table({
   timestamps: true,
   modelName: 'Provider',
-  tableName: 'providers'
+  tableName: 'providers',
+  charset: 'latin1'
 })
 export default class Provider extends Model<ProviderAttributes, ProviderCreationAttributes> {
   @Column(DataTypes.STRING)

@@ -68,6 +68,8 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL'
       }
+    }, {
+      charset: 'latin1'
     });
   },
   async down(queryInterface, _Sequelize) {

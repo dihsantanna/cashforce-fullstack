@@ -8,6 +8,7 @@ import Sponsor from './sponsor.model';
   timestamps: true,
   modelName: 'Offer',
   tableName: 'offers',
+  charset: 'latin1'
 })
 export default class Offer extends Model<OfferAttributes, OfferCreationAttributes> {
   @Column(DataTypes.STRING)

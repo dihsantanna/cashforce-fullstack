@@ -24,6 +24,8 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    }, {
+      charset: 'latin1'
     });
   },
   async down(queryInterface, _Sequelize) {

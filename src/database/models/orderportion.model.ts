@@ -7,6 +7,7 @@ import Order from './order.model';
   timestamps: true,
   modelName: 'Orderportion',
   tableName: 'orderportions',
+  charset: 'latin1'
 })
 export default class Orderportion extends Model<OrderportionAttributes, OrderportionCreationAttributes> {
   @Column(DataTypes.STRING)

@@ -6,7 +6,8 @@ import Order from './order.model';
 @Table({
   timestamps: true,
   modelName: 'User',
-  tableName: 'users'
+  tableName: 'users',
+  charset: 'latin1'
 })
 export default class User extends Model<UserAttributes, UserCreationAttributes> {
   @Column(DataTypes.STRING)

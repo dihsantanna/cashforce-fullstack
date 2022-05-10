@@ -9,7 +9,8 @@ import Sponsor from './sponsor.model';
 @Table({
   timestamps: true,
   modelName: 'Cnpj',
-  tableName: 'cnpjs'
+  tableName: 'cnpjs',
+  charset: 'latin1'
 })
 export default class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> {
   @Column(DataTypes.STRING)

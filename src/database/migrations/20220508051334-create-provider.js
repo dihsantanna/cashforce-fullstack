@@ -122,6 +122,8 @@ module.exports = {
         defaultValue: null,
         type: Sequelize.STRING
       }
+    }, {
+      charset: 'latin1'
     });
   },
   async down(queryInterface, _Sequelize) {
