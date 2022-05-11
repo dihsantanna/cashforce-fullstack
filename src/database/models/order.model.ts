@@ -1,5 +1,12 @@
-import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import {
+  Table,
+  Column,
+  Model,
+  ForeignKey,
+  BelongsTo,
+  HasMany,
+  DataType,
+} from 'sequelize-typescript';
 import {
   OrderAttributes,
   OrderCreationAttributes,
@@ -18,80 +25,80 @@ import User from './user.model';
   charset: 'latin1',
 })
 class Order extends Model<OrderAttributes, OrderCreationAttributes> {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderNfId: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderNumber: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderPath: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderFileName: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderOriginalName: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     emissionDate: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     pdfFile: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     emitedTo: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     nNf: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     CTE: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     value: string;
 
   @ForeignKey(() => Cnpj)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     cnpjId: number;
 
   @BelongsTo(() => Cnpj)
     cnpj: Cnpj;
 
   @ForeignKey(() => User)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     userId: number;
 
   @BelongsTo(() => User)
     user: User;
 
   @ForeignKey(() => Buyer)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     buyerId: number;
 
   @BelongsTo(() => Buyer)
     buyer: Buyer;
 
   @ForeignKey(() => Provider)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     providerId: number;
 
   @BelongsTo(() => Provider)
     provider: Provider;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderStatusBuyer: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     orderStatusProvider: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     deliveryReceipt: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     cargoPackingList: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     deliveryCtrc: string;
 
   @HasMany(() => Orderportion)

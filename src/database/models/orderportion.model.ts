@@ -1,5 +1,4 @@
-import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import { Table, Column, Model, ForeignKey, BelongsTo, DataType } from 'sequelize-typescript';
 import {
   OrderportionAttributes,
   OrderportionCreationAttributes,
@@ -16,20 +15,20 @@ class Orderportion extends Model<
   OrderportionAttributes,
   OrderportionCreationAttributes
   > {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     nDup: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     dVenc: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     vDup: string;
 
-  @Column(DataTypes.TINYINT)
+  @Column(DataType.TINYINT)
     availableToMarket: number;
 
   @ForeignKey(() => Order)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     orderId: number;
 
   @BelongsTo(() => Order)

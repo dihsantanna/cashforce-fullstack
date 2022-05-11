@@ -1,5 +1,4 @@
-import { Table, Column, Model, HasMany } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript';
 import {
   UserAttributes,
   UserCreationAttributes,
@@ -13,28 +12,28 @@ import Order from './order.model';
   charset: 'latin1',
 })
 class User extends Model<UserAttributes, UserCreationAttributes> {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     name: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     email: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     phoneNumber: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     mobile: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     departament: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     verificationCode: string;
 
-  @Column(DataTypes.TINYINT)
+  @Column(DataType.TINYINT)
     emailChecked: number;
 
-  @Column(DataTypes.TINYINT)
+  @Column(DataType.TINYINT)
     cashforceAdm: number;
 
   @HasMany(() => Order)

@@ -1,5 +1,4 @@
-import { Table, Column, Model, HasMany } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript';
 import {
   CnpjAttributes,
   CnpjCreationAttributes,
@@ -16,10 +15,10 @@ import Sponsor from './sponsor.model';
   charset: 'latin1',
 })
 class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     cnpj: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     companyType: string;
 
   @HasMany(() => Provider)

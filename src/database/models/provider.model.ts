@@ -1,5 +1,12 @@
-import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import {
+  Table,
+  Column,
+  Model,
+  ForeignKey,
+  BelongsTo,
+  HasMany,
+  DataType,
+} from 'sequelize-typescript';
 import {
   ProviderAttributes,
   ProviderCreationAttributes,
@@ -14,83 +21,83 @@ import Order from './order.model';
   charset: 'latin1',
 })
 class Provider extends Model<ProviderAttributes, ProviderCreationAttributes> {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     name: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     tradingName: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     cashforceTax: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     responsibleName: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     responsibleEmail: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     responsiblePosition: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     responsiblePhone: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     responsibleMobile: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     website: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     postalCode: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     address: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     number: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     complement: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     neighborhood: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     city: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     state: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     bank: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     bankAgency: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     account: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     documents: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     phoneNumber: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     situation: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     situationDate: string;
 
   @ForeignKey(() => Cnpj)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     cnpjId: number;
 
   @BelongsTo(() => Cnpj)
     cnpj: Cnpj;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     email: string;
 
   @HasMany(() => Order)

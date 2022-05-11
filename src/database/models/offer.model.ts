@@ -1,5 +1,4 @@
-import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize';
+import { Table, Column, Model, ForeignKey, BelongsTo, DataType } from 'sequelize-typescript';
 import {
   OfferAttributes,
   OfferCreationAttributes,
@@ -14,39 +13,39 @@ import Sponsor from './sponsor.model';
   charset: 'latin1',
 })
 class Offer extends Model<OfferAttributes, OfferCreationAttributes> {
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     tax: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     tariff: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     adValorem: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     float: string;
 
-  @Column(DataTypes.STRING)
+  @Column(DataType.STRING)
     iof: string;
 
-  @Column(DataTypes.DATE)
+  @Column(DataType.DATE)
     expiresIn: Date;
 
-  @Column(DataTypes.TINYINT)
+  @Column(DataType.TINYINT)
     paymentStatusSponsor: number;
 
-  @Column(DataTypes.TINYINT)
+  @Column(DataType.TINYINT)
     paymentStatusProvider: number;
 
   @ForeignKey(() => Order)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     orderId: number;
 
   @BelongsTo(() => Order)
     order: Order;
 
   @ForeignKey(() => Sponsor)
-  @Column(DataTypes.INTEGER)
+  @Column(DataType.INTEGER)
     sponsorId: number;
 
   @BelongsTo(() => Sponsor)
