@@ -1,6 +1,6 @@
 node_modules
 build
-*.spec.ts
+*.test.ts
 */database/models/index.ts
 */database/migrations/
 */database/seeders/
