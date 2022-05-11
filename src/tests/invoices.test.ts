@@ -27,7 +27,7 @@ describe('Testa se endpoint GET /invoices?userId=<id> em caso de sucesso', () =>
 
   after( () => {
     (Order.findAll as sinon.SinonStub).restore();
-  })
+  });
 
   it('retorna status code 200', () => {
     expect(chaiHttpResp).to.have.status(codes.OK);

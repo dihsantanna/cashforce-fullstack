@@ -6,5 +6,6 @@ const PORT = process.env.PORT as string;
 
 const server = new App();
 
-server.start(PORT);
 export const { app } = server;
+
+server.start(PORT);
