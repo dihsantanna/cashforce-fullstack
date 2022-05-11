@@ -13,7 +13,7 @@ import Offer from './offer.model';
   tableName: 'sponsors',
   charset: 'latin1',
 })
-export default class Sponsor extends Model<SponsorAttributes, SponsorCreationAttributes> {
+class Sponsor extends Model<SponsorAttributes, SponsorCreationAttributes> {
   @Column(DataTypes.STRING)
     name: string;
 
@@ -93,3 +93,5 @@ export default class Sponsor extends Model<SponsorAttributes, SponsorCreationAtt
   @HasMany(() => Offer)
     offers: Offer[];
 }
+
+export default Sponsor;

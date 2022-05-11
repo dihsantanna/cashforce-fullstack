@@ -17,7 +17,7 @@ import User from './user.model';
   tableName: 'orders',
   charset: 'latin1',
 })
-export default class Order extends Model<OrderAttributes, OrderCreationAttributes> {
+class Order extends Model<OrderAttributes, OrderCreationAttributes> {
   @Column(DataTypes.STRING)
     orderNfId: string;
 
@@ -100,3 +100,5 @@ export default class Order extends Model<OrderAttributes, OrderCreationAttribute
   @HasMany(() => Offer)
     offers: Offer[];
 }
+
+export default Order;

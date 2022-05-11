@@ -12,10 +12,10 @@ import Order from './order.model';
   tableName: 'orderportions',
   charset: 'latin1',
 })
-export default class Orderportion extends Model<
-OrderportionAttributes,
-OrderportionCreationAttributes
-> {
+class Orderportion extends Model<
+  OrderportionAttributes,
+  OrderportionCreationAttributes
+  > {
   @Column(DataTypes.STRING)
     nDup: string;
 
@@ -35,3 +35,5 @@ OrderportionCreationAttributes
   @BelongsTo(() => Order)
     order: Order;
 }
+
+export default Orderportion;

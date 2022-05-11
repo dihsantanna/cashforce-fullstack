@@ -13,7 +13,7 @@ import Order from './order.model';
   tableName: 'providers',
   charset: 'latin1',
 })
-export default class Provider extends Model<ProviderAttributes, ProviderCreationAttributes> {
+class Provider extends Model<ProviderAttributes, ProviderCreationAttributes> {
   @Column(DataTypes.STRING)
     name: string;
 
@@ -96,3 +96,5 @@ export default class Provider extends Model<ProviderAttributes, ProviderCreation
   @HasMany(() => Order)
     orders: Order[];
 }
+
+export default Provider;

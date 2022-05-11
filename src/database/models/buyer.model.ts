@@ -12,7 +12,7 @@ import Cnpj from './cnpj.model';
   tableName: 'buyers',
   charset: 'latin1',
 })
-export default class Buyer extends Model<BuyerAttributes, BuyerCreationAttributes> {
+class Buyer extends Model<BuyerAttributes, BuyerCreationAttributes> {
   @Column(DataTypes.STRING)
     name: string;
 
@@ -83,3 +83,5 @@ export default class Buyer extends Model<BuyerAttributes, BuyerCreationAttribute
   @Column(DataTypes.STRING)
     email: string;
 }
+
+export default Buyer;

@@ -12,7 +12,7 @@ import Order from './order.model';
   tableName: 'users',
   charset: 'latin1',
 })
-export default class User extends Model<UserAttributes, UserCreationAttributes> {
+class User extends Model<UserAttributes, UserCreationAttributes> {
   @Column(DataTypes.STRING)
     name: string;
 
@@ -40,3 +40,5 @@ export default class User extends Model<UserAttributes, UserCreationAttributes> 
   @HasMany(() => Order)
     orders: Order[];
 }
+
+export default User;

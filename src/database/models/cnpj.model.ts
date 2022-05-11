@@ -15,7 +15,7 @@ import Sponsor from './sponsor.model';
   tableName: 'cnpjs',
   charset: 'latin1',
 })
-export default class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> {
+class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> {
   @Column(DataTypes.STRING)
     cnpj: string;
 
@@ -34,3 +34,5 @@ export default class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> 
   @HasMany(() => Sponsor)
     sponsors: Sponsor[];
 }
+
+export default Cnpj;

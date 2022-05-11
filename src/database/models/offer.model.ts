@@ -13,7 +13,7 @@ import Sponsor from './sponsor.model';
   tableName: 'offers',
   charset: 'latin1',
 })
-export default class Offer extends Model<OfferAttributes, OfferCreationAttributes> {
+class Offer extends Model<OfferAttributes, OfferCreationAttributes> {
   @Column(DataTypes.STRING)
     tax: string;
 
@@ -52,3 +52,5 @@ export default class Offer extends Model<OfferAttributes, OfferCreationAttribute
   @BelongsTo(() => Sponsor)
     sponsor: Sponsor;
 }
+
+export default Offer;
