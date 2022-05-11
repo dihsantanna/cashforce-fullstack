@@ -1,107 +1,109 @@
-import {
-  Table,
-  Column,
-  Model,
-  ForeignKey,
-  BelongsTo,
-  HasMany,
-  DataType,
-} from 'sequelize-typescript';
-import {
-  ProviderAttributes,
-  ProviderCreationAttributes,
-} from '../../interfaces/ProviderCreationAttribute.interface';
+import { DataTypes, Model } from 'sequelize';
 import Cnpj from './cnpj.model';
-import Order from './order.model';
+import sequelize from '../config';
 
-@Table({
+class Provider extends Model {
+  declare id: number;
+
+  declare name: string;
+
+  declare tradingName: string;
+
+  declare cashforceTax: string;
+
+  declare responsibleName: string;
+
+  declare responsibleEmail: string;
+
+  declare responsiblePosition: string;
+
+  declare responsiblePhone: string;
+
+  declare responsibleMobile: string;
+
+  declare website: string;
+
+  declare postalCode: string;
+
+  declare address: string;
+
+  declare number: string;
+
+  declare complement: string;
+
+  declare neighborhood: string;
+
+  declare city: string;
+
+  declare state: string;
+
+  declare bank: string;
+
+  declare bankAgency: string;
+
+  declare account: string;
+
+  declare documents: string;
+
+  declare phoneNumber: string;
+
+  declare situation: string;
+
+  declare situationDate: string;
+
+  declare createdAt: Date;
+
+  declare updatedAt: Date;
+
+  declare cnpjId: number;
+
+  declare email: string;
+}
+
+Provider.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true,
+  },
+  name: DataTypes.STRING,
+  tradingName: DataTypes.STRING,
+  cashforceTax: DataTypes.STRING,
+  responsibleName: DataTypes.STRING,
+  responsibleEmail: DataTypes.STRING,
+  responsiblePosition: DataTypes.STRING,
+  responsiblePhone: DataTypes.STRING,
+  responsibleMobile: DataTypes.STRING,
+  website: DataTypes.STRING,
+  postalCode: DataTypes.STRING,
+  address: DataTypes.STRING,
+  number: DataTypes.STRING,
+  complement: DataTypes.STRING,
+  neighborhood: DataTypes.STRING,
+  city: DataTypes.STRING,
+  state: DataTypes.STRING,
+  bank: DataTypes.STRING,
+  bankAgency: DataTypes.STRING,
+  account: DataTypes.STRING,
+  documents: DataTypes.STRING,
+  phoneNumber: DataTypes.STRING,
+  situation: DataTypes.STRING,
+  situationDate: DataTypes.STRING,
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE,
+  cnpjId: DataTypes.INTEGER,
+  email: DataTypes.STRING,
+}, {
   timestamps: true,
   modelName: 'Provider',
   tableName: 'providers',
   charset: 'latin1',
-})
-class Provider extends Model<ProviderAttributes, ProviderCreationAttributes> {
-  @Column(DataType.STRING)
-    name: string;
+  sequelize,
+});
 
-  @Column(DataType.STRING)
-    tradingName: string;
+Provider.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
 
-  @Column(DataType.STRING)
-    cashforceTax: string;
-
-  @Column(DataType.STRING)
-    responsibleName: string;
-
-  @Column(DataType.STRING)
-    responsibleEmail: string;
-
-  @Column(DataType.STRING)
-    responsiblePosition: string;
-
-  @Column(DataType.STRING)
-    responsiblePhone: string;
-
-  @Column(DataType.STRING)
-    responsibleMobile: string;
-
-  @Column(DataType.STRING)
-    website: string;
-
-  @Column(DataType.STRING)
-    postalCode: string;
-
-  @Column(DataType.STRING)
-    address: string;
-
-  @Column(DataType.STRING)
-    number: string;
-
-  @Column(DataType.STRING)
-    complement: string;
-
-  @Column(DataType.STRING)
-    neighborhood: string;
-
-  @Column(DataType.STRING)
-    city: string;
-
-  @Column(DataType.STRING)
-    state: string;
-
-  @Column(DataType.STRING)
-    bank: string;
-
-  @Column(DataType.STRING)
-    bankAgency: string;
-
-  @Column(DataType.STRING)
-    account: string;
-
-  @Column(DataType.STRING)
-    documents: string;
-
-  @Column(DataType.STRING)
-    phoneNumber: string;
-
-  @Column(DataType.STRING)
-    situation: string;
-
-  @Column(DataType.STRING)
-    situationDate: string;
-
-  @ForeignKey(() => Cnpj)
-  @Column(DataType.INTEGER)
-    cnpjId: number;
-
-  @BelongsTo(() => Cnpj)
-    cnpj: Cnpj;
-
-  @Column(DataType.STRING)
-    email: string;
-
-  @HasMany(() => Order)
-    orders: Order[];
-}
+Cnpj.hasMany(Provider, { foreignKey: 'id', as: 'providers' });
 
 export default Provider;

@@ -4,3 +4,4 @@ build
 */database/models/index.ts
 */database/migrations/
 */database/seeders/
+*/database/config/

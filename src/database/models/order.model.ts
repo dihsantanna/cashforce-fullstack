@@ -1,111 +1,102 @@
-import {
-  Table,
-  Column,
-  Model,
-  ForeignKey,
-  BelongsTo,
-  HasMany,
-  DataType,
-} from 'sequelize-typescript';
-import {
-  OrderAttributes,
-  OrderCreationAttributes,
-} from '../../interfaces/OrderCreationAttribute.interface';
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config';
 import Buyer from './buyer.model';
 import Cnpj from './cnpj.model';
-import Offer from './offer.model';
-import Orderportion from './orderportion.model';
 import Provider from './provider.model';
 import User from './user.model';
 
-@Table({
-  timestamps: true,
-  modelName: 'Order',
-  tableName: 'orders',
-  charset: 'latin1',
-})
-class Order extends Model<OrderAttributes, OrderCreationAttributes> {
-  @Column(DataType.STRING)
-    orderNfId: string;
+class Order extends Model {
+  declare id: number;
 
-  @Column(DataType.STRING)
-    orderNumber: string;
+  declare orderNfId: string;
 
-  @Column(DataType.STRING)
-    orderPath: string;
+  declare orderNumber: string;
 
-  @Column(DataType.STRING)
-    orderFileName: string;
+  declare orderPath: string;
 
-  @Column(DataType.STRING)
-    orderOriginalName: string;
+  declare orderFileName: string;
 
-  @Column(DataType.STRING)
-    emissionDate: string;
+  declare orderOriginalName: string;
 
-  @Column(DataType.STRING)
-    pdfFile: string;
+  declare emissionDate: string;
 
-  @Column(DataType.STRING)
-    emitedTo: string;
+  declare pdfFile: string;
 
-  @Column(DataType.STRING)
-    nNf: string;
+  declare emitedTo: string;
 
-  @Column(DataType.STRING)
-    CTE: string;
+  declare nNf: string;
 
-  @Column(DataType.STRING)
-    value: string;
+  declare CTE: string;
 
-  @ForeignKey(() => Cnpj)
-  @Column(DataType.INTEGER)
-    cnpjId: number;
+  declare value: string;
 
-  @BelongsTo(() => Cnpj)
-    cnpj: Cnpj;
+  declare createdAt: Date;
 
-  @ForeignKey(() => User)
-  @Column(DataType.INTEGER)
-    userId: number;
+  declare updatedAt: Date;
 
-  @BelongsTo(() => User)
-    user: User;
+  declare cnpjId: number;
 
-  @ForeignKey(() => Buyer)
-  @Column(DataType.INTEGER)
-    buyerId: number;
+  declare userId: number;
 
-  @BelongsTo(() => Buyer)
-    buyer: Buyer;
+  declare buyerId: number;
 
-  @ForeignKey(() => Provider)
-  @Column(DataType.INTEGER)
-    providerId: number;
+  declare providerId: number;
 
-  @BelongsTo(() => Provider)
-    provider: Provider;
+  declare orderStatusBuyer: string;
 
-  @Column(DataType.STRING)
-    orderStatusBuyer: string;
+  declare orderStatusProvider: string;
 
-  @Column(DataType.STRING)
-    orderStatusProvider: string;
+  declare deliveryReceipt: string;
 
-  @Column(DataType.STRING)
-    deliveryReceipt: string;
+  declare cargoPackingList: string;
 
-  @Column(DataType.STRING)
-    cargoPackingList: string;
-
-  @Column(DataType.STRING)
-    deliveryCtrc: string;
-
-  @HasMany(() => Orderportion)
-    orderportions: Orderportion[];
-
-  @HasMany(() => Offer)
-    offers: Offer[];
+  declare deliveryCtrc: string;
 }
+
+Order.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true,
+  },
+  orderNfId: DataTypes.STRING,
+  orderNumber: DataTypes.STRING,
+  orderPath: DataTypes.STRING,
+  orderFileName: DataTypes.STRING,
+  orderOriginalName: DataTypes.STRING,
+  emissionDate: DataTypes.STRING,
+  pdfFile: DataTypes.STRING,
+  emitedTo: DataTypes.STRING,
+  nNf: DataTypes.STRING,
+  CTE: DataTypes.STRING,
+  value: DataTypes.STRING,
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE,
+  cnpjId: DataTypes.INTEGER,
+  userId: DataTypes.INTEGER,
+  buyerId: DataTypes.INTEGER,
+  providerId: DataTypes.INTEGER,
+  orderStatusBuyer: DataTypes.STRING,
+  orderStatusProvider: DataTypes.STRING,
+  deliveryReceipt: DataTypes.STRING,
+  cargoPackingList: DataTypes.STRING,
+  deliveryCtrc: DataTypes.STRING,
+}, {
+  timestamps: true,
+  tableName: 'orders',
+  modelName: 'Order',
+  charset: 'latin1',
+  sequelize,
+});
+
+Order.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Order.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+Order.belongsTo(Buyer, { foreignKey: 'buyerId', as: 'buyer' });
+Order.belongsTo(Provider, { foreignKey: 'providerId', as: 'provider' });
+
+Cnpj.hasMany(Order, { foreignKey: 'id', as: 'orders' });
+User.hasMany(Order, { foreignKey: 'id', as: 'orders' });
+Provider.hasMany(Order, { foreignKey: 'id', as: 'orders' });
 
 export default Order;

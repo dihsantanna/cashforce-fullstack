@@ -1,43 +1,53 @@
-import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript';
-import {
-  UserAttributes,
-  UserCreationAttributes,
-} from '../../interfaces/UserCreationAttributes.interface';
-import Order from './order.model';
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config';
 
-@Table({
+class User extends Model {
+  declare id: number;
+
+  declare name: string;
+
+  declare email: string;
+
+  declare phoneNumber: string;
+
+  declare mobile: string;
+
+  declare departament: string;
+
+  declare verificationCode: string;
+
+  declare emailChecked: number;
+
+  declare createdAt: Date;
+
+  declare updatedAt: Date;
+
+  declare cashforceAdm: number;
+}
+
+User.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true,
+  },
+  name: DataTypes.STRING,
+  email: DataTypes.STRING,
+  phoneNumber: DataTypes.STRING,
+  mobile: DataTypes.STRING,
+  departament: DataTypes.STRING,
+  verificationCode: DataTypes.STRING,
+  emailChecked: DataTypes.TINYINT,
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE,
+  cashforceAdm: DataTypes.TINYINT,
+}, {
   timestamps: true,
   modelName: 'User',
   tableName: 'users',
   charset: 'latin1',
-})
-class User extends Model<UserAttributes, UserCreationAttributes> {
-  @Column(DataType.STRING)
-    name: string;
-
-  @Column(DataType.STRING)
-    email: string;
-
-  @Column(DataType.STRING)
-    phoneNumber: string;
-
-  @Column(DataType.STRING)
-    mobile: string;
-
-  @Column(DataType.STRING)
-    departament: string;
-
-  @Column(DataType.STRING)
-    verificationCode: string;
-
-  @Column(DataType.TINYINT)
-    emailChecked: number;
-
-  @Column(DataType.TINYINT)
-    cashforceAdm: number;
-
-  @HasMany(() => Order)
-    orders: Order[];
-}
+  sequelize,
+});
 
 export default User;

@@ -1,6 +1,7 @@
-import  {  Sequelize  }  from  'sequelize-typescript'
-const databaseConfig =  require( '../config/databaseConfig');
+import { Sequelize } from 'sequelize-typescript';
 import 'dotenv/config';
+
+const databaseConfig = require('./databaseConfig');
 
 const appEnv = process.env.APP_ENV;
 

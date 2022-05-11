@@ -1,37 +1,35 @@
-import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript';
-import {
-  CnpjAttributes,
-  CnpjCreationAttributes,
-} from '../../interfaces/CnpjCreationAttribute.interface';
-import Buyer from './buyer.model';
-import Order from './order.model';
-import Provider from './provider.model';
-import Sponsor from './sponsor.model';
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config';
 
-@Table({
+class Cnpj extends Model {
+  declare id: number;
+
+  declare cnpj: string;
+
+  declare companyType: string;
+
+  declare createdAt: Date;
+
+  declare updatedAt: Date;
+}
+
+Cnpj.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true,
+  },
+  cnpj: DataTypes.STRING,
+  companyType: DataTypes.STRING,
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE,
+}, {
   timestamps: true,
   modelName: 'Cnpj',
   tableName: 'cnpjs',
   charset: 'latin1',
-})
-class Cnpj extends Model<CnpjAttributes, CnpjCreationAttributes> {
-  @Column(DataType.STRING)
-    cnpj: string;
-
-  @Column(DataType.STRING)
-    companyType: string;
-
-  @HasMany(() => Provider)
-    providers: Provider[];
-
-  @HasMany(() => Buyer)
-    buyers: Buyer[];
-
-  @HasMany(() => Order)
-    orders: Order[];
-
-  @HasMany(() => Sponsor)
-    sponsors: Sponsor[];
-}
+  sequelize,
+});
 
 export default Cnpj;
