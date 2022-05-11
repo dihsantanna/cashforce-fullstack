@@ -56,7 +56,7 @@ module.exports = {
         defaultValue: null,
         type: Sequelize.STRING
       },
-      complemente: {
+      complement: {
         defaultValue: null,
         type: Sequelize.STRING
       },
