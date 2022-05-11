@@ -1,7 +1,7 @@
 const buyerName = 'SACADO 001';
 const providerName = 'CEDENTE 002';
 const tradingName = 'CEDENTE 002 LTDA';
-const cnpj = '00000000000002';
+const number = '00000000000002';
 
 export const invoices = [
   {
@@ -13,7 +13,9 @@ export const invoices = [
     provider: {
       name: providerName,
       tradingName,
-      cnpj,
+      cnpj: {
+        number,
+      },
     },
     emissionDate: '2020-10-30T11:00:00-03:00',
     value: '198450',
@@ -28,7 +30,9 @@ export const invoices = [
     provider: {
       name: providerName,
       tradingName,
-      cnpj,
+      cnpj: {
+        number,
+      },
     },
     emissionDate: '2020-11-04T15:32:35-02:00',
     value: '168850',
@@ -43,7 +47,9 @@ export const invoices = [
     provider: {
       name: providerName,
       tradingName,
-      cnpj,
+      cnpj: {
+        number,
+      },
     },
     emissionDate: '2020-11-10',
     value: '222795',

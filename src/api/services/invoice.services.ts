@@ -23,8 +23,9 @@ class InvoiceServices implements Service {
         model: Provider,
         as: 'provider',
         attributes: ['name', 'tradingName'],
-        include: [{ model: Cnpj, attributes: ['cnpj'] }],
+        include: [{ model: Cnpj, as: 'cnpj', attributes: [['cnpj', 'number']] }],
       }],
+      attributes: ['id', 'nNf', 'emissionDate', 'value', 'orderStatusBuyer'],
     }) as unknown as Invoice[];
     return { code: codes.OK, response };
   }

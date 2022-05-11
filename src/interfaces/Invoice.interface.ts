@@ -7,7 +7,9 @@ export interface Invoice {
   provider: {
     name: string,
     tradingName: string,
-    cnpj: string,
+    cnpj: {
+      cnpj: string,
+    }
   },
   emissionDate: string,
   value: string,
