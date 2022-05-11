@@ -105,7 +105,7 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        unDelete: 'SET NULL',
+        onDelete: 'SET NULL',
         key: 'providerId'
       },
       orderStatusBuyer: {
