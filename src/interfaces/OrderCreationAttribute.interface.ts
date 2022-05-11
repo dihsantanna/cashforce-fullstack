@@ -17,7 +17,7 @@ export interface OrderAttributes {
   userId: number,
   buyerId: number,
   providerId: number,
-  oderStatusBuyer: string,
+  orderStatusBuyer: string,
   orderStatusProvider: string,
   deliveryReceipt: string,
   cargoPackingList: string,

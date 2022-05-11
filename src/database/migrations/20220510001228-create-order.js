@@ -108,7 +108,7 @@ module.exports = {
         unDelete: 'SET NULL',
         key: 'providerId'
       },
-      oderStatusBuyer: {
+      orderStatusBuyer: {
         defaultValue: '0',
         type: Sequelize.STRING,
       },

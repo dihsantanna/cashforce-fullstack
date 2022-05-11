@@ -80,7 +80,7 @@ export default class Order extends Model<OrderAttributes, OrderCreationAttribute
     provider: Provider;
 
   @Column(DataTypes.STRING)
-    oderStatusBuyer: string;
+    orderStatusBuyer: string;
 
   @Column(DataTypes.STRING)
     orderStatusProvider: string;
