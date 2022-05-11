@@ -1,9 +1,9 @@
 import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize/types';
+import { DataTypes } from 'sequelize';
 import {
   OrderportionAttributes,
   OrderportionCreationAttributes,
-} from 'src/interfaces/OrderportionCreationAttribute.interface';
+} from '../../interfaces/OrderportionCreationAttribute.interface';
 import Order from './order.model';
 
 @Table({

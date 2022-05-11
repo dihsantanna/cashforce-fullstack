@@ -1,9 +1,9 @@
 import { Table, Column, Model, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
-import { DataTypes } from 'sequelize/types';
+import { DataTypes } from 'sequelize';
 import {
   SponsorAttributes,
   SponsorCreationAttributes,
-} from 'src/interfaces/SponsorCreationAttribute.interface';
+} from '../../interfaces/SponsorCreationAttribute.interface';
 import Cnpj from './cnpj.model';
 import Offer from './offer.model';
 
