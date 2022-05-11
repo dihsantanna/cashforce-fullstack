@@ -28,12 +28,10 @@ export class App {
     this.app.use(accessControl);
     this.app.use(bodyParser.json());
     this.app.use(cors());
-
-    this._attach(this.app, this._routes);
   }
 
   public setRouter(routerParams: Type[]): void {
-    this._routes = routerParams;
+    this._attach(this.app, routerParams);
   }
 
   public start(PORT: string | number):void {

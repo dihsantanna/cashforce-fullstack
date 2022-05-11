@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
 
 export interface InvoiceController {
-  getInvoices(req: Request, res: Response): Promise<void>;
+  getInvoices(res: Response, userId: string): Promise<void>;
 }

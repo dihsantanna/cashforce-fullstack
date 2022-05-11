@@ -1,4 +1,3 @@
-import { Injectable, Inject } from '@decorators/di';
 import { StatusCodes as codes } from 'http-status-codes';
 import { Invoice } from '../../interfaces/Invoice.interface';
 import Buyer from '../../database/models/buyer.model';
@@ -10,11 +9,8 @@ import {
 } from '../../interfaces/InvoiceService.interface';
 import Cnpj from '../../database/models/cnpj.model';
 
-const order = Order;
-
-@Injectable()
 class InvoiceServices implements Service {
-  constructor(@Inject(order) protected model: typeof order) {}
+  constructor(protected model = Order) {}
 
   async getInvoices(userId: number): Promise<InvoiceServiceReturn> {
     const response = await this.model.findAll({
