@@ -7,7 +7,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "build": "/bin/sh tsc_eval.sh",
+    "build": "npx -y tsc",
     "start": "node .",
     "dev": "ts-node ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
