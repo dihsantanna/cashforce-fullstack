@@ -22,6 +22,7 @@
   "author": "Diogo Sant'Anna",
   "license": "ISC",
   "dependencies": {
+    "@decorators/di": "^1.0.3",
     "@decorators/express": "^2.6.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",

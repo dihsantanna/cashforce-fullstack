@@ -1,5 +1,10 @@
 import { Invoice } from './Invoice.interface';
 
+export interface InvoiceServiceReturn {
+  code: number,
+  response: Invoice[]
+}
+
 export interface InvoiceService {
-  getInvoices(): Promise<Invoice[]>;
+  getInvoices(userId: number): Promise<InvoiceServiceReturn>;
 }
