@@ -11,11 +11,11 @@ switch (appEnv) {
   case 'test':
     sequelize = new Sequelize(databaseConfig.test);
     break;
-  case 'development':
-    sequelize = new Sequelize(databaseConfig.development);
+  case 'production':
+    sequelize = new Sequelize(databaseConfig.production);
     break;
   default:
-    sequelize = new Sequelize(databaseConfig.production);
+    sequelize = new Sequelize(databaseConfig.development);
     break;
 }
 
