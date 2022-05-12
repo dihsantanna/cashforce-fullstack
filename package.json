@@ -7,13 +7,16 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "init:app": "npm i --silent && npm run build && npm run compose:up",
     "build": "npx -y tsc",
     "start": "node .",
     "dev": "nodemon ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "pretest": "npm run build && npm run db:reset",
-    "test": "npm run pretest && mocha -r ts-node/register ./src/tests/*.test.ts -t 10000 --exit"
+    "test": "npm run pretest && mocha -r ts-node/register ./src/tests/*.test.ts -t 10000 --exit",
+    "compose:up": "docker-compose up -d --build  && npm run pretest",
+    "compose:down": "docker-compose down --remove-orphans"
   },
   "repository": {
     "type": "git",
