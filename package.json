@@ -8,6 +8,7 @@
   },
   "scripts": {
     "init:app": "npm i --silent && npm run build && npm run compose:up",
+    "kill:app": "npm run compose:down && docker image rm cashforce-api mysql",
     "build": "npx -y tsc",
     "start": "node .",
     "dev": "nodemon ./src/server.ts",
