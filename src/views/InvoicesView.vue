@@ -9,16 +9,35 @@
     </aside>
     <div class="main-content d-flex w-100 flex-column align-items-stretch">
       <div class="head p-2 border-start border-bottom rounded-1 border-1"></div>
-      <main class="border-start border-top rounded-1 border-1">tabela</main>
+      <main class="border-start border-top rounded-1 border-1">
+        <InvoiceList :loading="loading" />
+      </main>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { requestData } from '@/services/api';
+import store from '@/store';
+import InvoiceList from '@/components/InvoiceList.vue';
 
 export default defineComponent({
   name: 'InvoicesView',
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  mounted() {
+    this.loading = true;
+    requestData('/invoices?userId=1').then((res) => {
+      store.commit('setInvoices', res);
+      console.log(res);
+    }).catch((error) => console.error(error))
+      .finally(() => { this.loading = false; });
+  },
+  components: { InvoiceList },
 });
 </script>
 

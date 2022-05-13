@@ -9,9 +9,6 @@ export default createStore({
     getInvoices(state) {
       return state.invoices;
     },
-    getProviders: (state) => (id: number) => (
-      state.invoices.find((invoice) => invoice.id === id)
-    ),
   },
   mutations: {
     setInvoices(state, payload: Invoice[]) {
