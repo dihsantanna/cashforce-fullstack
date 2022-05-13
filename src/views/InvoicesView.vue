@@ -2,7 +2,7 @@
   <div class="home d-flex">
     <aside class="d-flex w-25 flex-column justify-content-start">
       <img class="logo" alt="logo" src="@/assets/logo.png" />
-      <button class="d-flex align-items-center btn btn-lg invoices-btn p-3 mt-5" type="button">
+      <button class="d-flex align-items-center btn btn-lg invoices-btn p-3 mt-4" type="button">
         <img class="me-3" alt="invoices" src="@/assets/hands.svg" />
         Notas fiscais
       </button>
