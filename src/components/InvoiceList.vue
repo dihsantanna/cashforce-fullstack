@@ -38,7 +38,7 @@
           </tr>
         </tbody>
       </table>
-  <h1 class="" v-if="loading">Carregando</h1>
+      <h1 class="" v-if="loading">Carregando</h1>
     </div>
   </div>
 </template>
@@ -111,7 +111,7 @@ td {
 
 .box-style {
   box-shadow: 0.08px 0.08px 0.08px 1px #DFE2EB;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .green-data {
