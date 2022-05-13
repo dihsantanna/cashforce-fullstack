@@ -1,20 +1,5 @@
 # Projeto *Cashforce Back-End*
 
-
-
-
-### [Sumário](#sumário)
-
-* #### [Tecnologias Utilizadas](#--tecnologias-utilizadas)
-
-* #### [Iniciando a aplicação](#-iniciando-o-back-end-rocket)
-
-* #### [Retorno da API](#-retorno-da-api-newspaper)
-
-<br>
-
----
-
 <br>
 
 API construida para ser consumida pelo front-end [*Cashforce Front-End*](https://github.com/dihsantanna/cashforce-front-end), que consiste em um consultor de notas fiscais;
