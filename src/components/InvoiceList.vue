@@ -38,7 +38,9 @@
           </tr>
         </tbody>
       </table>
-      <h1 class="" v-if="loading">Carregando</h1>
+      <div class="loading" v-if="loading">
+        <h2>Carregando...</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -124,5 +126,14 @@ td {
 
 .red-data {
   color: #DD0000;
+}
+
+.loading {
+  align-items: center;
+  color: #727D94;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  width: 100%;
 }
 </style>
