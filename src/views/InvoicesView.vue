@@ -31,7 +31,8 @@ export default defineComponent({
   },
   mounted() {
     this.loading = true;
-    requestData('/invoices?userId=1').then((res) => {
+    const id = 1;
+    requestData(`/invoices?userId=${id}`).then((res) => {
       store.commit('setInvoices', res);
       console.log(res);
     }).catch((error) => console.error(error))
