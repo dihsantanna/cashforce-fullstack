@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-export const DeliveryStatus = [
+export const deliveryStatus = [
   'Pendente de confirmação',
   'Pedido confirmado',
   'Não reconhece o pedido',
@@ -9,4 +8,16 @@ export const DeliveryStatus = [
   'Recebida com devolução parcial',
   'Recebida e confirmada',
   'Pagamento Autorizado',
+];
+
+export const colorStatus = [
+  'yellow',
+  'green',
+  'red',
+  'red',
+  'red',
+  'red',
+  'yellow',
+  'green',
+  'green',
 ];

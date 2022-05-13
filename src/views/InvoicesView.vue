@@ -9,7 +9,7 @@
     </aside>
     <div class="main-content d-flex w-100 flex-column align-items-stretch">
       <div class="head p-2 border-start border-bottom rounded-1 border-1"></div>
-      <main class="border-start border-top rounded-1 border-1">
+      <main class="p-5 border-start border-top rounded-1 border-1">
         <InvoiceList :loading="loading" />
       </main>
     </div>
