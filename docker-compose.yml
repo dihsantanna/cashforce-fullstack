@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  frontend:
+    build: .
+    container_name: cashforce-front
+    ports:
+      - 8080:8080
+    restart: always
+    healthcheck:
+      test: curl --fail http://localhost:8080 || exit 1
+      interval: 60s
+      retries: 5
+      start_period: 20s
+      timeout: 10s
+  web-test:
+    container_name: web-test
+    image: node:16-alpine
+    depends_on:
+      frontend:
+        condition: service_healthy
