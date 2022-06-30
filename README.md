@@ -3,7 +3,7 @@
 
 Foi desenvolvido uma página seguindo um modelo do [figma](https://www.figma.com/file/m82rvaRyNaYV5VC4QcvaoZ/Teste-Cashfroce), cujo objetivo é possibilitar a consulta das informações de notas fiscais emitidas e o status da transação que foi realizada.
 
-O projeto é alimentado com informações da API do projeto Cashforce-Back-End [clique aqui](https://github.com/dihsantanna/cashforce-back-end) para vizualizar a documentação e código da API.
+O projeto é alimentado com informações da API do projeto Cashforce-Back-End [clique aqui](https://github.com/dihsantanna/cashforce-back-end) para visualizar a documentação e código da API.
 
 
 
@@ -58,6 +58,5 @@ npm run kill:app
 
 ## Aprendizados
 
-Foi incrivel esse meu primeiro contato com **VueJS + Vuex**, pode não ter sido fuma aplicação robusta e cheia de detalhes, porém foi um excelente aprendizado.
-
-Achei uma tecnología simples e muito performática, além de contar com uma documentação super completa que me ajudou muito nas horas de aperto. :smile:
+Foi incrível esse meu primeiro contato com **VueJS + Vuex**, pode não ter sido uma aplicação robusta e cheia de detalhes, porém foi um excelente aprendizado.
+Achei uma tecnologia simples e muito performática, além de contar com uma documentação super completa que me ajudou muito nas horas de aperto. :smile:
