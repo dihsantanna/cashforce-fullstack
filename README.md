@@ -12,7 +12,7 @@ API construida para ser consumida pelo front-end [*Cashforce Front-End*](https:/
 
 - _**`Node + ExpressJs + Typescript`**_ para implementação da api, pensando na organização de modo a implementar a arquitetura _**`MSC`**_, também escolhi o *`TypeScript`* pois é bem útil na implementação de **`POO`**;
   
-- _**`ORM Sequelize`**_ para implementar de forma mais prática os Models e Queries e Associações, trazendo mais facilidade e versatilidade na hora de fazer as requisições para o banco de Dados;
+- _**`ORM Sequelize`**_ para implementar de forma mais prática os Models, Queries e Associações, trazendo mais facilidade e versatilidade na hora de fazer as requisições para o banco de Dados;
   
 - _**`Decorators/Express`**_ para facilitar a implementação das rotas e também na manipulação dos elementos da requisição como `body, query e params`;
 
