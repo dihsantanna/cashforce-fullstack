@@ -1,0 +1,7 @@
+node_modules
+build
+*.test.ts
+*/database/models/index.ts
+*/database/migrations/
+*/database/seeders/
+*/database/config/
