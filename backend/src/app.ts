@@ -1,7 +1,11 @@
-import express, { Express, RequestHandler } from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
 import { attachControllers, Type } from '@decorators/express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import express, { Express, RequestHandler } from 'express';
+
+import dotenv = require('dotenv');
+
+dotenv.config();
 
 export class App {
   public app: Express;
