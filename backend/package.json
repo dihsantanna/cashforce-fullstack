@@ -8,11 +8,11 @@
   },
   "scripts": {
     "build": "/bin/sh tsc_eval.sh",
-    "prestart": "npm run build && npm run db:create",
+    "prestart": "npm run build",
     "start": "node .",
     "dev": "nodemon ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
-    "db:create": "npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "db:populate": "npx sequelize-cli db:seed:all",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "pretest": "npm run build && npm run db:reset",
     "test": "npm run pretest && mocha -r ts-node/register ./src/tests/*.test.ts -t 10000 --exit"

@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       orderNfId: {
         allowNull: false,
@@ -66,7 +66,7 @@ module.exports = {
       },
       cnpjId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'cnpjs',
           key: 'id'
@@ -77,7 +77,7 @@ module.exports = {
       },
       userId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'users',
           key: 'id'
@@ -88,7 +88,7 @@ module.exports = {
       },
       buyerId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'buyers',
           key: 'id'
@@ -99,7 +99,7 @@ module.exports = {
       },
       providerId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'providers',
           key: 'id'

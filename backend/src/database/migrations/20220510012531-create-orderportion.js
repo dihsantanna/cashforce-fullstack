@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       nDup: {
         allowNull: false,
@@ -22,7 +22,7 @@ module.exports = {
       },
       availableToMarket: {
         defaultValue: 1,
-        type: Sequelize.TINYINT(1)
+        type: Sequelize.SMALLINT
       },
       createdAt: {
         allowNull: false,
@@ -34,7 +34,7 @@ module.exports = {
       },
       orderId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'orders',
           key: 'id'
