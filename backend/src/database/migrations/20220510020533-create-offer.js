@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       tax: {
         allowNull: false,
@@ -34,11 +34,11 @@ module.exports = {
       },
       paymentStatusSponsor: {
         defaultValue: 0,
-        type: Sequelize.TINYINT(1)
+        type: Sequelize.SMALLINT
       },
       paymentStatusProvider: {
         defaultValue: 0,
-        type: Sequelize.TINYINT(1)
+        type: Sequelize.SMALLINT
       },
       createdAt: {
         allowNull: false,
@@ -50,7 +50,7 @@ module.exports = {
       },
       orderId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'orders',
           key: 'id'
@@ -61,7 +61,7 @@ module.exports = {
       },
       sponsorId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'sponsors',
           key: 'id'

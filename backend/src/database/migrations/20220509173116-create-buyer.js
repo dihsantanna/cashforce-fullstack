@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       name: {
         allowNull: false,
@@ -94,7 +94,7 @@ module.exports = {
       },
       cnpjId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'cnpjs',
           key: 'id'
@@ -105,7 +105,7 @@ module.exports = {
       },
       confirm: {
         defaultValue: 1,
-        type: Sequelize.TINYINT(1),
+        type: Sequelize.SMALLINT,
       },
       email: {
         defaultValue: null,

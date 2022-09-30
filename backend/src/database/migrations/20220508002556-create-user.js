@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       name: {
         allowNull: false,
@@ -35,7 +35,7 @@ module.exports = {
       },
       emailChecked: {
         defaultValue: 0,
-        type: Sequelize.TINYINT(1)
+        type: Sequelize.SMALLINT
       },
       createdAt: {
         allowNull: false,
@@ -47,7 +47,7 @@ module.exports = {
       },
       cashforceAdm: {
         defaultValue: 0,
-        type: Sequelize.TINYINT(1)
+        type: Sequelize.SMALLINT
       }
     }, {
       charset: 'latin1'

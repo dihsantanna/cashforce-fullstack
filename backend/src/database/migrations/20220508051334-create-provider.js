@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       name: {
         allowNull: false,
@@ -114,7 +114,7 @@ module.exports = {
           model: 'cnpjs',
           key: 'id'
         },
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         key: 'cnpjId'

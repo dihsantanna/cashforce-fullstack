@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       name: {
         allowNull: false,
@@ -106,7 +106,7 @@ module.exports = {
       },
       cnpjId: {
         defaultValue: null,
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.INTEGER,
         references: {
           model: 'cnpjs',
           key: 'id'
@@ -123,7 +123,7 @@ module.exports = {
       charset: 'latin1'
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, _Sequelize) {
     await queryInterface.dropTable('sponsors');
   }
 };
