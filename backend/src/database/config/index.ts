@@ -1,5 +1,4 @@
 import dotenv = require('dotenv');
-import * as pg from 'pg';
 import { Sequelize } from 'sequelize-typescript';
 
 dotenv.config();
@@ -15,10 +14,7 @@ switch (appEnv) {
     sequelize = new Sequelize(databaseConfig.test);
     break;
   case 'production':
-    sequelize = new Sequelize(databaseConfig.production, {
-      dialectModule: pg,
-      schema: process.env.DB_SCHEMA || 'public',
-});
+    sequelize = new Sequelize(databaseConfig.production);
     break;
   default:
     sequelize = new Sequelize(databaseConfig.development);
