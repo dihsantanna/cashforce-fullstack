@@ -6,6 +6,7 @@
   "scripts": {
     "install:all": "npm i --prefix ./frontend --silent && npm i --prefix ./backend --silent",
     "install:apps": "npm run install:all && npm run compose:up",
+    "frontend:build": "npm run build --prefix ./frontend",
     "kill:apps": "npm run compose:down && docker image rm cashforce-frontend cashforce-backend",
     "compose:up": "docker-compose up -d --build",
     "compose:down": "docker-compose down --remove-orphans"
