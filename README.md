@@ -2,6 +2,12 @@
 
 O projeto consiste em um pequeno site, construido com Vue.js, seguindo um modelo do [figma](https://www.figma.com/file/m82rvaRyNaYV5VC4QcvaoZ/Teste-Cashfroce), cujo objetivo é possibilitar a consulta das informações de notas fiscais emitidas e o status da transação que foi realizada. O site recebe as informações de uma pequena API RESTful em Node.
 
+---
+
+Você pode conferir o deploy da aplicação acessando [https://cashforce-fullstack.vercel.app/](https://cashforce-fullstack.vercel.app/);
+
+---
+
 ![demonstração da pagina](frontend/demononstracao.gif)
 
 ## Back-End 🧱
