@@ -1,9 +1,9 @@
-import { Sequelize } from 'sequelize-typescript';
 import 'dotenv/config';
+import { Sequelize } from 'sequelize-typescript';
 
 const databaseConfig = require('./databaseConfig');
 
-const appEnv = process.env.APP_ENV;
+const appEnv = process.env.NODE_ENV || 'development';
 
 let sequelize: Sequelize;
 
