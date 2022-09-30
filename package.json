@@ -1,0 +1,24 @@
+{
+  "name": "cashforce-fullstack",
+  "version": "1.0.0",
+  "description": "O projeto consiste em um pequeno site, construido com Vue.js, seguindo um modelo do [figma](https://www.figma.com/file/m82rvaRyNaYV5VC4QcvaoZ/Teste-Cashfroce), cujo objetivo é possibilitar a consulta das informações de notas fiscais emitidas e o status da transação que foi realizada. O site recebe as informações de uma pequena API RESTful em Node.",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm i --prefix ./frontend --silent && npm i --prefix ./backend --silent",
+    "install:apps": "npm run install:all && npm run compose:up",
+    "kill:apps": "npm run compose:down && docker image rm cashforce-frontend cashforce-backend",
+    "compose:up": "docker-compose up -d --build",
+    "compose:down": "docker-compose down --remove-orphans"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dihsantanna/cashforce-fullstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dihsantanna/cashforce-fullstack/issues"
+  },
+  "homepage": "https://github.com/dihsantanna/cashforce-fullstack#readme"
+}

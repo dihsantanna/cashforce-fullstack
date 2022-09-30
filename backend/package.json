@@ -1,23 +1,20 @@
 {
   "name": "cashforce-back-end",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "./build/server",
   "engines": {
     "node": ">=16.0.0"
   },
   "scripts": {
-    "init:app": "npm i --silent && npm run build && npm run compose:up",
-    "kill:app": "npm run compose:down && docker image rm cashforce-api mysql",
-    "build": "npx -y tsc",
+    "build": "/bin/sh tsc_eval.sh",
+    "prestart": "npm run build && npm run db:reset",
     "start": "node .",
     "dev": "nodemon ./src/server.ts",
     "lint": "eslint ./src --ext .ts",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "pretest": "npm run build && npm run db:reset",
-    "test": "npm run pretest && mocha -r ts-node/register ./src/tests/*.test.ts -t 10000 --exit",
-    "compose:up": "docker-compose up -d --build  && npm run pretest",
-    "compose:down": "docker-compose down --remove-orphans"
+    "test": "npm run pretest && mocha -r ts-node/register ./src/tests/*.test.ts -t 10000 --exit"
   },
   "repository": {
     "type": "git",
@@ -30,6 +27,7 @@
     "@decorators/di": "^1.0.3",
     "@decorators/express": "^2.6.0",
     "body-parser": "^1.20.0",
+    "cashforce-fullstack": "file:..",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",

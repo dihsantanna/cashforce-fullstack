@@ -21,20 +21,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            class="box-style"
-            v-bind:key="invoice.id" v-for="invoice in invoices">
+          <tr class="box-style" v-bind:key="invoice.id" v-for="invoice in invoices">
             <td :key="invoice.id">{{invoice.nNf}}</td>
-            <td :key="invoice.id" >{{invoice.buyer.name}}</td>
-            <td :key="invoice.id" >{{invoice.provider.name}}</td>
-            <td :key="invoice.id" >
+            <td :key="invoice.id">{{invoice.buyer.name}}</td>
+            <td :key="invoice.id">{{invoice.provider.name}}</td>
+            <td :key="invoice.id">
               {{moment(invoice.emissionDate).locale('pt-br').format('DD/MM/YY')}}
             </td>
-            <td class="green-data" :key="invoice.id" >{{toBRL(invoice.value)}}</td>
-            <td :class="`${colorStatus[invoice.orderStatusBuyer]}-data`" :key="invoice.id" >
+            <td class="green-data" :key="invoice.id">{{toBRL(invoice.value)}}</td>
+            <td :class="`${colorStatus[invoice.orderStatusBuyer]}-data`" :key="invoice.id">
               {{deliveryStatus[invoice.orderStatusBuyer]}}
             </td>
-            <td :key="invoice.id" ><AssignorData :id="invoice.id" /></td>
+            <td :key="invoice.id">
+              <AssignorData :id="invoice.id" />
+            </td>
           </tr>
         </tbody>
       </table>
@@ -46,10 +46,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { colorStatus, deliveryStatus } from '@/utils/deliveryStatus';
 import moment from 'moment';
+import { defineComponent } from 'vue';
 import { mapState } from 'vuex';
-import { deliveryStatus, colorStatus } from '@/utils/deliveryStatus';
 import AssignorData from './AssignorData.vue';
 
 export default defineComponent({

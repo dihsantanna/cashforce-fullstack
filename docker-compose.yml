@@ -1,0 +1,77 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    image: cashforce-frontend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./frontend:/app/frontend
+    networks:
+      - cashforce
+    environment:
+      - VUE_APP_API_URL=http://localhost:3001
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: curl --fail http://localhost:8080 || exit 1
+      interval: 30s
+      timeout: 15s
+      retries: 10
+  backend:
+    build: ./backend
+    container_name: backend
+    image: cashforce-backend
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=123456
+      - DB_NAME=cashforce
+      - DB_DIALECT=mysql
+      - DB_PORT=3306
+      - APP_ENV=development
+      - PORT=3001
+    networks:
+      - cashforce
+    restart: always
+    healthcheck:
+      test: [ "CMD", "lsof", "-t", "-i:3001" ]
+      timeout: 10s
+      retries: 5
+  db:
+    image: mysql:8.0.28
+    container_name: db
+    ports:
+      - 3002:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: 'always'
+    networks:
+      - cashforce
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 5
+    cap_add:
+      - SYS_NICE
+  app_running:
+    image: node:16-alpine
+    container_name: app_running
+    depends_on:
+      frontend:
+        condition: service_healthy
+    networks:
+      - cashforce
+    command: [ "echo", "Is Running" ]
+networks:
+  cashforce:
+    name: cashforce

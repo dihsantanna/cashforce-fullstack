@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import InvoiceList from '@/components/InvoiceList.vue';
 import { requestData } from '@/services/api';
 import store from '@/store';
-import InvoiceList from '@/components/InvoiceList.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'InvoicesView',
