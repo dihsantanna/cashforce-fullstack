@@ -16,7 +16,8 @@ switch (appEnv) {
     break;
   case 'production':
     sequelize = new Sequelize(databaseConfig.production, {
-  dialectModule: pg
+      dialectModule: pg,
+      schema: process.env.DB_SCHEMA || 'public',
 });
     break;
   default:
