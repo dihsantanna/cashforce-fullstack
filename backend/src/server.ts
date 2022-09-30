@@ -1,6 +1,8 @@
+import dotenv = require('dotenv');
 import 'reflect-metadata';
 import { server } from './routes';
-import 'dotenv/config';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 
