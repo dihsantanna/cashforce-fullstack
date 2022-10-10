@@ -14,7 +14,7 @@ switch (appEnv) {
     sequelize = new Sequelize(databaseConfig.test);
     break;
   case 'production':
-    sequelize = new Sequelize(databaseConfig.production);
+    sequelize = new Sequelize(process.env.DB_URL as string);
     break;
   default:
     sequelize = new Sequelize(databaseConfig.development);
