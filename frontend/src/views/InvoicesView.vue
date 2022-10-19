@@ -8,7 +8,23 @@
       </button>
     </aside>
     <div class="main-content d-flex w-100 flex-column align-items-stretch">
-      <div class="head p-2 border-start border-bottom rounded-1 border-1"></div>
+      <div class="head p-2 border-start border-bottom rounded-1 border-1 position-relative">
+        <ToastMessage :title="'Atenção!!'">
+          Por conta do deploy do backend ser feito com
+          servidores gratuitos, o primeiro carregamento pode demorar
+          de 60 a 120 segundos. Se após esse tempo não houver
+          resposta, reinicie a pagina, caso não funcione, por favor
+          envie um e-mail para
+          <a
+          class="text-danger"
+          href="mailto:diogosantanna08@gmail.com"
+          target="_blank">
+            diogosantanna08@gmail.com
+          </a>.
+          <br />
+          Obrigado pela compreensão! 😉
+        </ToastMessage>
+      </div>
       <main class="p-5 border-start border-top rounded-1 border-1">
         <InvoiceList :loading="loading" />
       </main>
@@ -18,9 +34,11 @@
 
 <script lang="ts">
 import InvoiceList from '@/components/InvoiceList.vue';
+import ToastMessage from '@/components/ToastMessage.vue';
 import { requestData } from '@/services/api';
 import store from '@/store';
 import { defineComponent } from 'vue';
+import { mapState } from 'vuex';
 
 export default defineComponent({
   name: 'InvoicesView',
@@ -37,7 +55,8 @@ export default defineComponent({
     }).catch((error) => console.error(error))
       .finally(() => { this.loading = false; });
   },
-  components: { InvoiceList },
+  computed: mapState(['invoices']),
+  components: { InvoiceList, ToastMessage },
 });
 </script>
 
